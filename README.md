@@ -18,9 +18,7 @@ config :logger, :console,
 ```
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir_logger` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `exlogger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
