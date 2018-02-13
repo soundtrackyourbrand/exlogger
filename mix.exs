@@ -1,13 +1,23 @@
 defmodule ExLogger.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+  @url "https://github.com/soundtrackyourbrand/exlogger"
+
   def project do
     [
       app: :exlogger,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      build_embedded: Mix.env == :prod,
+      deps: deps(),
+      package: package(),
+      description: "JSON log formatter for the elixir Logger",
+      docs: [
+        source_ref: "v#{@version}",
+        source_url: @url
+      ]
     ]
   end
 
@@ -22,5 +32,13 @@ defmodule ExLogger.Mixfile do
       {:poison, "~> 3.1"},
       {:timex, "~> 3.0"}
     ]
+  end
+
+  defp package do
+    %{
+      licenses: ["MIT"],
+      maintainers: ["Sven Widén"],
+      links: %{"GitHub" => @url}
+    }
   end
 end
