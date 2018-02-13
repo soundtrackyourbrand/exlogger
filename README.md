@@ -11,6 +11,12 @@ Used to standardize log format for elixir projects. Outputs logs in JSON format,
 }
 ```
 
+To enable exlogger you have to add this to your config:
+```
+config :logger, :console,
+  format: {ExLogger, :format},
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
