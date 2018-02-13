@@ -6,7 +6,7 @@ defmodule ExLogger do
         _ -> Timex.format!(Timex.now, "{ISO:Extended:Z}")
       end
       log_data = Map.merge(%{
-        "msg" => message,
+        "msg" => "#{message}",
         "level" => level,
         "ts" => time
       }, Map.new(metadata))
