@@ -14,9 +14,12 @@ defmodule ExLogger.Mixfile do
       deps: deps(),
       package: package(),
       description: "JSON log formatter for the elixir Logger",
+      name: "ExLogger",
+      source_ref: "v#{@version}",
+      source_url: @url,
       docs: [
-        source_ref: "v#{@version}",
-        source_url: @url
+        main: "ExLogger",
+        extras: ["README.md"]
       ]
     ]
   end
@@ -30,7 +33,7 @@ defmodule ExLogger.Mixfile do
   defp deps do
     [
       {:poison, "~> 4.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, "~> 0.19.0", only: :dev, runtime: false}
     ]
   end
 
