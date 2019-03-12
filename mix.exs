@@ -9,8 +9,8 @@ defmodule ExLogger.Mixfile do
       app: :exlogger,
       version: @version,
       elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
-      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
+      build_embedded: Mix.env() == :prod,
       deps: deps(),
       package: package(),
       description: "JSON log formatter for the elixir Logger",
@@ -23,14 +23,13 @@ defmodule ExLogger.Mixfile do
 
   def application do
     [
-      extra_applications: [:timex, :poison, :logger]
+      extra_applications: [:poison, :logger]
     ]
   end
 
   defp deps do
     [
-      {:poison, "~> 3.1"},
-      {:timex, "~> 3.0"},
+      {:poison, "~> 4.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
