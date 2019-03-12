@@ -1,7 +1,7 @@
 defmodule ExLogger.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
   @url "https://github.com/soundtrackyourbrand/exlogger"
 
   def project do
