@@ -8,7 +8,7 @@ defmodule ExLogger.LoggerTest do
     :ok = Application.put_env(:logger, :utc_log, true)
     json = ExLogger.format(:info, "hello world", ts, [])
 
-    assert Poison.decode!(json) == %{
+    assert Jason.decode!(json) == %{
              "ts" => "2001-01-02T03:04:05.006Z",
              "msg" => "hello world",
              "level" => "info"
@@ -32,7 +32,7 @@ defmodule ExLogger.LoggerTest do
     :ok = Application.put_env(:logger, :utc_log, false)
     json = ExLogger.format(:info, "hello world", ts, [])
 
-    assert Poison.decode!(json) == %{
+    assert Jason.decode!(json) == %{
              "ts" => "2001-01-02T03:04:05.006#{local_zone}",
              "msg" => "hello world",
              "level" => "info"

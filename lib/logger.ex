@@ -21,7 +21,7 @@ defmodule ExLogger do
         Map.new(metadata)
       )
 
-    "#{Poison.encode!(log_data)}\n"
+    "#{Jason.encode!(log_data)}\n"
   rescue
     _ ->
       "#{Timestamp.format(timestamp, {0, 0})} #{metadata[level]} #{level} #{message}\n"

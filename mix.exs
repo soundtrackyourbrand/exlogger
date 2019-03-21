@@ -26,13 +26,13 @@ defmodule ExLogger.Mixfile do
 
   def application do
     [
-      extra_applications: [:poison, :logger]
+      extra_applications: [:logger]
     ]
   end
 
   defp deps do
     [
-      {:poison, "~> 4.0"},
+      {:jason, "~> 1.1"},
       {:ex_doc, "~> 0.19.0", only: :dev, runtime: false}
     ]
   end
