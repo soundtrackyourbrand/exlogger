@@ -15,8 +15,8 @@ defmodule ExLogger.Mixfile do
       package: package(),
       description: "JSON log formatter for the elixir Logger",
       docs: [
-        source_ref: "v#{@version}",
-        source_url: @url
+        main: "ExLogger",
+        extras: ["README.md"]
       ]
     ]
   end
