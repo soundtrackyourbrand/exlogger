@@ -31,7 +31,7 @@ defmodule ExLogger.Mixfile do
     [
       {:poison, "~> 3.1"},
       {:timex, "~> 3.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, "~> 0.19.0", only: :dev, runtime: false}
     ]
   end
 
